@@ -6,14 +6,16 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/student" method="post">
+    <form action="/student" method="post" enctype="multipart/form-data">
       <label for="name">First name:</label><br />
       <input type="text" id="name" name="name" value="" /><br />
       <label for="email">Email:</label><br />
       <input type="text" id="email" name="email" value="" /><br /><br />
-
       <label for="password">Password:</label><br />
       <input type="text" id="password" name="password" value="" /><br /><br />
+
+      <label for="img">Image:</label><br />
+      <input type="file" id="img" name="img" value="" /><br /><br />
 
       <input type="submit" value="Submit" />
     </form>

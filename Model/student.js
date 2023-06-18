@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.TEXT,
     },
+    img: {
+      type: DataTypes.STRING,
+      allowNull:true
+    },
   });
   return Student;
 };

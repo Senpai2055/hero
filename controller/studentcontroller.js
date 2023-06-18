@@ -26,23 +26,25 @@ exports.loginstudent = async (req, res) => {
   });
   console.log(foundstudent);
   // console.log(student[0].password);
-  if (bcrypt.compareSync(password, foundstudent[0].password)){
-      res.redirect("/dashboard");
-    } else {
-      res.redirect("/login");
-    }
+  if (bcrypt.compareSync(password, foundstudent[0].password)) {
+    res.redirect("/dashboard");
+  } else {
+    res.redirect("/login");
+  }
 };
 
 exports.createstudent = async (req, res) => {
-  console.log(req.body);
+  console.log(req.file);
   const { name, email, password } = req.body; //short cut method
-  // const name = req.body.name;
+  // const name = req.body.name;n
+
   // const email = req.body.email;
   student.create({
     title: "hello",
     name: name,
     email: email,
     password: bcrypt.hashSync(password, 5),
+    img: "http://localhost:3000/" + req.file.filename,
   });
   res.redirect("/login");
 };
